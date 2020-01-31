@@ -1,4 +1,4 @@
-package library
+package ellen.library
 
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
