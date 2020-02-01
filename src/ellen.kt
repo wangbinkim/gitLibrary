@@ -1,8 +1,6 @@
 package ellen
 
-fun A() {
-
-}
+//ellen code
 
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
