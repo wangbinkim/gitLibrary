@@ -1,8 +1,6 @@
 package justin
 
-fun b() {
-
-}
+// justin code
 
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
