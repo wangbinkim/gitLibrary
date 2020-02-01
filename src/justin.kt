@@ -1,17 +1,5 @@
 package justin
 
-fun a():Int {
-    return 99
-}
-
-fun justin():Int {
-    return 0
-}
-
-fun ellen():Int {
-    return 0
-}
-
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
 
