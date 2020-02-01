@@ -2,6 +2,10 @@ package library.ellen
 
 import library.ellen.data.*
 
+fun 새기능1() {
+
+}
+
 fun main() {
     makeBasicInformation()
 
