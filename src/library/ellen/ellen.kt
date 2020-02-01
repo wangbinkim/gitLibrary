@@ -11,7 +11,7 @@ fun 새기능2():Int {
 }
 
 fun 새기능3():String {
-    return "AA"
+    return "AAA"
 }
 
 
