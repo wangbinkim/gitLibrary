@@ -15,7 +15,6 @@ fun 새기능3():String {
 }
 
 
-
 fun main() {
     makeBasicInformation()
 
