@@ -6,6 +6,11 @@ fun 새기능1() {
 
 }
 
+fun 새기능2():Int {
+    return 0
+}
+
+
 fun main() {
     makeBasicInformation()
 
