@@ -27,15 +27,6 @@ fun main() {
         }
     }
 
-    people.forEach { p ->
-        println(p.name)
-    }
-    people.forEach { p ->
-        println(p.name)
-    }
-    people.forEach { p ->
-        println(p.name)
-    }
 }
 
 fun borrowBook(personNumber: String, bookNumer: String) {
