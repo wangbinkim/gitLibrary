@@ -3,7 +3,7 @@ package library.justin
 import library.ellen.data.*
 
 fun main() {
-    basicInformation()
+    makeBasicInformation()
 
     books.forEach {
         println("${it.name} :: ${it.bookNum}")
