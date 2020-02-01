@@ -1,4 +1,4 @@
-package justin.library
+package justin
 
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
