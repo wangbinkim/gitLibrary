@@ -1,6 +1,12 @@
 package justin
 
-// ellen code
+fun a() {
+
+}
+
+fun ellen() {
+
+}
 
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
