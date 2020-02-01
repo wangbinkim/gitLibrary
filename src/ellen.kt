@@ -1,6 +1,6 @@
 package ellen
 
-// justin code
+// ellen code
 
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
