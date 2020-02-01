@@ -1,6 +1,12 @@
 package justin
 
-// justin code
+fun a() {
+
+}
+
+fun justin() {
+
+}
 
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
