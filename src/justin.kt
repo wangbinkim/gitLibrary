@@ -1,5 +1,8 @@
 package justin
-//request
+
+fun B() {
+
+}
 
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
