@@ -1,49 +1,6 @@
-package justin
+package library.justin
 
-fun a():Int {
-    return 99
-}
-
-fun justin():Int {
-    return 0
-}
-
-fun ellen():Int {
-    return 0
-}
-
-var books = ArrayList<Book>()
-var people = ArrayList<Person>()
-
-data class Book(
-    var name: String,
-    var bookNum: String,
-    var borrowed: Boolean = true
-)
-
-data class Person(
-    var name: String,
-    var personNum: String,
-    var borrowedBookInfo: ArrayList<Book> = arrayListOf()
-)
-
-fun basicInformation() {
-    var book1 = Book("Harry Potter", "001", true)
-    var book2 = Book("Sherlock Holmes", "002")
-    var book3 = Book("Sherlock Holmes #2", "003", false)
-
-    var person1 = Person("Ellen", "001")
-    var person2 = Person("Justin", "002")
-    var person3 = Person("WB", "003")
-
-    books.add(book1)
-    books.add(book2)
-    books.add(book3)
-
-    people.add(person1)
-    people.add(person2)
-    people.add(person3)
-}
+import library.ellen.data.*
 
 fun main() {
     basicInformation()
