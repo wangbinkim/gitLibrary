@@ -33,8 +33,8 @@ fun basicInformation() {
     people.add(person3)
 }
 
-fun 함수제작테스트():Int {
-    return 111
+fun 함수제작테스트() {
+
 }
 
 fun main() {
