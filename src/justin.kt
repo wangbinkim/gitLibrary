@@ -1,7 +1,7 @@
 package justin
 
-fun a() {
-
+fun a():Int {
+    return 99
 }
 
 fun ellen() {
