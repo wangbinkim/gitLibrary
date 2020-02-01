@@ -4,16 +4,12 @@ fun a():Int {
     return 99
 }
 
-fun justin():String {
-    return "0"
-}
-
-fun wb() {
+fun justin() {
 
 }
 
-fun ellen():String {
-    return "1"
+fun ellen() {
+
 }
 
 var books = ArrayList<Book>()
