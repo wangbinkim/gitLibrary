@@ -10,9 +10,11 @@ fun 새기능2():Int {
     return 0
 }
 
-fun 새기능3():Int {
-    return 9
+fun 새기능3():String {
+    return "AA"
 }
+
+
 
 fun main() {
     makeBasicInformation()
