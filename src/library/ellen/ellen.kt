@@ -186,7 +186,6 @@ fun 검색해서출력하라책을() {}
 // todo 대출목록 쓰기
 
 
-//
 fun returnBorrowedBooks(): ArrayList<Person> {
     return ArrayList<Person>()
 }
