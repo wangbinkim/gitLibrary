@@ -8,9 +8,6 @@ fun justin():Int {
     return 0
 }
 
-fun ellen() {
-
-}
 
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
