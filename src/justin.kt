@@ -4,8 +4,8 @@ fun a():Int {
     return 99
 }
 
-fun justin() {
-
+fun justin():Int {
+    return 0
 }
 
 fun ellen() {
