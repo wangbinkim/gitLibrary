@@ -15,7 +15,7 @@ data class Person(
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
 
-fun basicInformation() {
+fun makeBasicInformation() {
     var book1 = Book("Harry Potter", "001", false)
     var book2 = Book("Sherlock Holmes #1", "002")
     var book3 = Book("Sherlock Holmes #2", "003", false)

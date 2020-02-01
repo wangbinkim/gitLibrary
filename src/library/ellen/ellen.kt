@@ -3,7 +3,7 @@ package library.ellen
 import library.ellen.data.*
 
 fun main() {
-    basicInformation()
+    makeBasicInformation()
 
     searchBook("Holmes")
     borrowBook("Ellen", "001")
