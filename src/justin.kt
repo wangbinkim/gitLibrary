@@ -4,12 +4,8 @@ fun a():Int {
     return 99
 }
 
-fun justin():Int {
+fun ellen():Int {
     return 0
-}
-
-fun ellen() {
-
 }
 
 var books = ArrayList<Book>()
