@@ -1,7 +1,7 @@
 package justin
 
 fun a():Int {
-    return 0
+    return 99
 }
 
 fun justin() {
