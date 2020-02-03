@@ -2,6 +2,10 @@ package library.ellen
 
 import library.ellen.data.*
 
+fun ellen(){
+
+}
+
 fun main() {
     makeBasicInformation()
 
@@ -89,13 +93,13 @@ fun borrowBook(personNumber: String, bookNumber: String) {
 
     if (p != null) {
         if (b != null) {
-            if(b.borrowed) println(" 대출중인 책")
-            else{
+            if (b.borrowed) println(" 대출중인 책")
+            else {
                 println("대출됨")
                 p.borrowedBookInfo.add(b)
                 b.borrowed = false
             }
-        }else  println("책 번호가 존재하지 않음")
+        } else println("책 번호가 존재하지 않음")
 
     } else println("회원 번호가 존재하지 않음")
 

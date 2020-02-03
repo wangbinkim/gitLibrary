@@ -6,13 +6,13 @@ fun main() {
     makeBasicInformation()
 
     books.forEach {
-        println("${it.name} :: ${it.bookNum}")
+        println("BOOK : ${it.name} :: ${it.bookNum}")
     }
 
-    println(books)
+    println("BOOKS : $books ")
 
     people.forEach { p ->
-        println(p.name)
+        println("PERSON : ${p.name}")
     }
 
 
