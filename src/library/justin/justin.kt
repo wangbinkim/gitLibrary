@@ -2,6 +2,11 @@ package library.justin
 
 import library.ellen.data.*
 
+fun justin() {
+
+}
+
+
 fun main() {
     makeBasicInformation()
 
@@ -29,7 +34,7 @@ fun main() {
 
 }
 
-fun borrowBook(personNumber: String, bookNumer: String) {
+fun borrowBook(personNumber: String, bookNumber: String) {
 
 }
 
@@ -107,5 +112,6 @@ fun runProgram(userValue: String) {
 
         }
     }
+
 
 }
