@@ -2,10 +2,6 @@ package library.ellen
 
 import library.ellen.data.*
 
-fun ellen(){
-
-}
-
 fun main() {
     makeBasicInformation()
 
@@ -13,6 +9,7 @@ fun main() {
     borrowBook("Ellen", "001")
     borrowBook("001", "002")
     borrowBook("003", "003")
+    borrowBook("002", "002")
     //returnBook("001")
 
 
@@ -71,14 +68,15 @@ fun searchBook(bookName: String): ArrayList<Book>? {
     books.filter { it.name.contains(bookName) }.forEach { b ->
         //        println(b.name)
         bookList.add(b)
-//        println(bookList)
     }
     if (bookList != ArrayList<Book>()) {
+        println(bookList)
         return bookList
     } else return null
-
-//    }
 }
+// todo 완료됨
+
+
 //    for( i in 1..books.size){
 //        println(i)
 //    }
@@ -93,16 +91,15 @@ fun borrowBook(personNumber: String, bookNumber: String) {
 
     if (p != null) {
         if (b != null) {
-            if (b.borrowed) println(" 대출중인 책")
+            if (b.borrowable == false) println("${b.name} 는 대출중인 책")
             else {
-                println("대출됨")
+                println("${p.name} 님 ${b.name} 가 대출됨")
                 p.borrowedBookInfo.add(b)
-                b.borrowed = false
+                b.borrowable = false
             }
         } else println("책 번호가 존재하지 않음")
 
     } else println("회원 번호가 존재하지 않음")
-
 }
 
 

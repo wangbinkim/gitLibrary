@@ -3,7 +3,7 @@ package library.ellen.data
 data class Book(
     var name: String,
     var bookNum: String,
-    var borrowed: Boolean = false
+    var borrowable: Boolean = true
 )
 
 data class Person(
@@ -16,9 +16,9 @@ var books = ArrayList<Book>()
 var people = ArrayList<Person>()
 
 fun makeBasicInformation() {
-    var book1 = Book("Harry Potter", "001", false)
+    var book1 = Book("Harry Potter", "001")
     var book2 = Book("Sherlock Holmes #1", "002")
-    var book3 = Book("Sherlock Holmes #2", "003", false)
+    var book3 = Book("Sherlock Holmes #2", "003")
 
     var person1 = Person("Ellen", "001")
     var person2 = Person("Justin", "002")
