@@ -1,12 +1,13 @@
 package library.ellen
 
 import library.ellen.data.*
-import kotlin.reflect.jvm.internal.impl.serialization.deserialization.ProtoContainer
+
 
 fun main() {
     makeBasicInformation()
     borrowBook("001", "001")
     borrowBook("001", "002")
+    returnBorrowedBooks("001")
     returnBorrowedBooks("001")
 }
 
@@ -41,7 +42,7 @@ fun borrowBook(personNumber: String, bookNumber: String) {
 }
 // 완료됨
 
-fun returnBorrowedBooks(bookNumber: String) {
+fun returnBorrowedBooks(bookNumber: String): Int {
     var b = books.find { it.bookNum == bookNumber }
     var p = people.find { it.borrowedBookInfo.contains(b) }
 
@@ -49,23 +50,29 @@ fun returnBorrowedBooks(bookNumber: String) {
         if (p != null) {
             b.borrowable = true
             p.borrowedBookInfo.remove(b)
-            L("${p.name} 님 ${b.name} 가 반납되었습니다.")
+            return L("${p.name} 님 ${b.name} 가 반납되었습니다.", 100)
             println(p.borrowedBookInfo)
-        } else L("반납 불가능한 책")
-    } else L("책번호가 존재하지 않음")
+        } else return L("반납 불가능한 책", 101)
+    } else return L("책번호가 존재하지 않음", 102)
+}
+// return code 100 반납완료 101 반납불가 102 책번호 존재하지 않음
+// 완료됨
+
+//fun checkBorrowedBook():ArrayList<Person> {
+//    return
+//}
+
+fun L(s: Any) {
+    println("ellen log : $s")
+}
+
+fun L(s: Any, n: Int): Int {
+    println("ellen log : $s")
+    return n
 }
 
 
-fun L(str: String) {
-    println("ellen log : " + str)
-}
-
-fun L(arr: ArrayList<Book>) {
-    println("ellen log : " + arr)
-}
-
-//todo returnBorrowedBooks 확인 && checkBorrowedBook(bookNumber:String):Boolean 만들기
-
+//todo checkBorrowedBook(bookNumber:String):Boolean 만들기
 
 
 // 아빠답안지
