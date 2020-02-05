@@ -15,7 +15,7 @@ data class Person(
 data class ReturnedInfo(
     var personName: String?,
     var bookName: String?,
-    var code: String
+    var code: Int
 )
 // 회원 이름, 책 이름, 코드
 

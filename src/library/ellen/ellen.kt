@@ -52,16 +52,15 @@ fun returnBorrowedBooks(bookNumber: String): ReturnedInfo {
             b.borrowable = true
             p.borrowedBookInfo.remove(b)
             println(p.borrowedBookInfo)
-            return ReturnedInfo(p.name, b.name, "CODE_RETURNED")
-        } else return ReturnedInfo(null, null, "CODE_NO_PERSON")
-    } else return ReturnedInfo(null, null, "CODE_NO_BOOK")
+            return ReturnedInfo(p.name, b.name, 100)
+        } else return ReturnedInfo(null, null, 101)
+    } else return ReturnedInfo(null, null, 102)
 }
-// todo 회원 이름, 책 이름, 결과 코드 리턴 (Data Class 작성)
 // return code 100 반납완료 101 반납불가 102 책번호 존재하지 않음
 // 완료됨
 
 //fun checkBorrowedBook():Person? {
-//    var p = people.forEach{it.borrowedBookInfo != }
+//    var p = people.forEach{it.borrowedBookInfo}
 //    println(p)
 //    return (p)
 //}
@@ -124,10 +123,10 @@ if (b != null) {
 //    }
 //}
 
-fun runProgram() {}
-fun 대출하라책을() {}
-fun 반납하라책을() {}
-fun 검색해서출력하라책을() {}
+//fun runProgram() {}
+//fun 대출하라책을() {}
+//fun 반납하라책을() {}
+//fun 검색해서출력하라책을() {}
 //예제
 
 // 아빠답안지
