@@ -12,6 +12,14 @@ data class Person(
     var borrowedBookInfo: ArrayList<Book> = arrayListOf()
 )
 
+data class ReturnedInfo(
+    var personName: String?,
+    var bookName: String?,
+    var code: String
+)
+// 회원 이름, 책 이름, 코드
+
+
 var books = ArrayList<Book>()
 var people = ArrayList<Person>()
 

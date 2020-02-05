@@ -8,7 +8,8 @@ fun main() {
     borrowBook("001", "001")
     borrowBook("001", "002")
     returnBorrowedBooks("001")
-    returnBorrowedBooks("001")
+    returnBorrowedBooks("002")
+//    checkBorrowedBook()
 }
 
 fun searchBook(bookName: String): ArrayList<Book>? {
@@ -42,7 +43,7 @@ fun borrowBook(personNumber: String, bookNumber: String) {
 }
 // 완료됨
 
-fun returnBorrowedBooks(bookNumber: String): Int {
+fun returnBorrowedBooks(bookNumber: String): ReturnedInfo {
     var b = books.find { it.bookNum == bookNumber }
     var p = people.find { it.borrowedBookInfo.contains(b) }
 
@@ -50,16 +51,19 @@ fun returnBorrowedBooks(bookNumber: String): Int {
         if (p != null) {
             b.borrowable = true
             p.borrowedBookInfo.remove(b)
-            return L("${p.name} 님 ${b.name} 가 반납되었습니다.", 100)
             println(p.borrowedBookInfo)
-        } else return L("반납 불가능한 책", 101)
-    } else return L("책번호가 존재하지 않음", 102)
+            return ReturnedInfo(p.name, b.name, "CODE_RETURNED")
+        } else return ReturnedInfo(null, null, "CODE_NO_PERSON")
+    } else return ReturnedInfo(null, null, "CODE_NO_BOOK")
 }
+// todo 회원 이름, 책 이름, 결과 코드 리턴 (Data Class 작성)
 // return code 100 반납완료 101 반납불가 102 책번호 존재하지 않음
 // 완료됨
 
-//fun checkBorrowedBook():ArrayList<Person> {
-//    return
+//fun checkBorrowedBook():Person? {
+//    var p = people.forEach{it.borrowedBookInfo != }
+//    println(p)
+//    return (p)
 //}
 
 fun L(s: Any) {
