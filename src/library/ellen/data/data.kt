@@ -18,6 +18,8 @@ data class ReturnedInfo(
     var code: Int
 )
 // 회원 이름, 책 이름, 코드
+// return code 100 반납완료 101 회원 없음 102 책 존재하지 않음 103 대출완료 104 대출중
+
 
 
 var books = ArrayList<Book>()

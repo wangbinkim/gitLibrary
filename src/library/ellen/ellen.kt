@@ -6,10 +6,11 @@ import library.ellen.data.*
 fun main() {
     makeBasicInformation()
     borrowBook("001", "001")
-    borrowBook("001", "002")
-    returnBorrowedBooks("001")
-    returnBorrowedBooks("002")
-//    checkBorrowedBook()
+    borrowBook("002", "002")
+    borrowBook("003", "003")
+//    returnBorrowedBooks("001")
+//    returnBorrowedBooks("002")
+    println(printBorrowedBook())
 }
 
 fun searchBook(bookName: String): ArrayList<Book>? {
@@ -25,23 +26,25 @@ fun searchBook(bookName: String): ArrayList<Book>? {
 }
 //완료됨
 
-fun borrowBook(personNumber: String, bookNumber: String) {
+fun borrowBook(personNumber: String, bookNumber: String): ReturnedInfo {
     var p = people.find { it.personNum == personNumber }
     var b = books.find { it.bookNum == bookNumber }
 
     if (p != null) {
         if (b != null) {
-            if (!b.borrowable) L("${b.name} 는 대출중인 책")
+            if (!b.borrowable) ReturnedInfo(p.name, b.name, 104)
             else {
-                L("${p.name} 님 ${b.name} 가 대출됨")
+                L("${p.name} 님 ${b.name} 가 대출됨") // 지우기
                 p.borrowedBookInfo.add(b)
                 b.borrowable = false
+                return ReturnedInfo(p.name, b.name, 103)
             }
-        } else L("책 번호가 존재하지 않음")
+        } else ReturnedInfo(null, null, 102)
 
-    } else L("회원 번호가 존재하지 않음")
+    }
+    return ReturnedInfo(null, null, 101)
 }
-// 완료됨
+
 
 fun returnBorrowedBooks(bookNumber: String): ReturnedInfo {
     var b = books.find { it.bookNum == bookNumber }
@@ -51,19 +54,20 @@ fun returnBorrowedBooks(bookNumber: String): ReturnedInfo {
         if (p != null) {
             b.borrowable = true
             p.borrowedBookInfo.remove(b)
-            println(p.borrowedBookInfo)
+            L("${p.name} 님 ${b.name} 반납됨") // 지우기
             return ReturnedInfo(p.name, b.name, 100)
         } else return ReturnedInfo(null, null, 101)
     } else return ReturnedInfo(null, null, 102)
-}
-// return code 100 반납완료 101 반납불가 102 책번호 존재하지 않음
-// 완료됨
+} // 완료됨
 
-//fun checkBorrowedBook():Person? {
-//    var p = people.forEach{it.borrowedBookInfo}
-//    println(p)
-//    return (p)
-//}
+fun printBorrowedBook():List<Person>?{
+//    var p = people.find { person -> person.borrowedBookInfo.size > 0 }
+    var p = people.filter{it.borrowedBookInfo.size > 0}
+    L("checkBorrowedBook()  :  " + p) // remove
+    if(p.size > 0){
+        return p
+    } else return null
+}
 
 fun L(s: Any) {
     println("ellen log : $s")
@@ -73,9 +77,6 @@ fun L(s: Any, n: Int): Int {
     println("ellen log : $s")
     return n
 }
-
-
-//todo checkBorrowedBook(bookNumber:String):Boolean 만들기
 
 
 // 아빠답안지
