@@ -6,11 +6,11 @@ import library.ellen.data.*
 fun main() {
     makeBasicInformation()
     borrowBook("001", "001")
-    borrowBook("002", "002")
-    borrowBook("003", "003")
+    borrowBook("004", "002")
+    borrowBook("002", "005")
 //    returnBorrowedBooks("001")
 //    returnBorrowedBooks("002")
-    println(printBorrowedBook())
+//    println(printBorrowedBook())
 }
 
 fun searchBook(bookName: String): ArrayList<Book>? {
@@ -32,16 +32,23 @@ fun borrowBook(personNumber: String, bookNumber: String): ReturnedInfo {
 
     if (p != null) {
         if (b != null) {
-            if (!b.borrowable) ReturnedInfo(p.name, b.name, 130)
-            else {
+            if (!b.borrowable) {
+                L("대출중")
+                ReturnedInfo(p.name, b.name, 130)
+            } else {
                 L("${p.name} 님 ${b.name} 가 대출됨") // 지우기
                 p.borrowedBookInfo.add(b)
                 b.borrowable = false
+//                L("대출됨")
                 return ReturnedInfo(p.name, b.name, 120)
-            }
-        } else ReturnedInfo(null, null, 110)
 
+            }
+        } else {
+            L("책없음")
+            return ReturnedInfo(null, null, 110)
+        }
     }
+    L("회원 없음")
     return ReturnedInfo(null, null, 100)
 }
 
@@ -60,10 +67,10 @@ fun returnBorrowedBooks(bookNumber: String): ReturnedInfo {
     } else return ReturnedInfo(null, null, 220)
 } // 완료됨
 
-fun printBorrowedBook():List<Person>?{
-    var p = people.filter{it.borrowedBookInfo.size > 0}
+fun printBorrowedBook(): List<Person>? {
+    var p = people.filter { it.borrowedBookInfo.size > 0 }
     L("checkBorrowedBook()  :  " + p) // remove
-    if(p.size > 0){
+    if (p.size > 0) {
         return p
     } else return null
 }
