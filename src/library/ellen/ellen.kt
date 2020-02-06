@@ -32,17 +32,17 @@ fun borrowBook(personNumber: String, bookNumber: String): ReturnedInfo {
 
     if (p != null) {
         if (b != null) {
-            if (!b.borrowable) ReturnedInfo(p.name, b.name, 104)
+            if (!b.borrowable) ReturnedInfo(p.name, b.name, 130)
             else {
                 L("${p.name} 님 ${b.name} 가 대출됨") // 지우기
                 p.borrowedBookInfo.add(b)
                 b.borrowable = false
-                return ReturnedInfo(p.name, b.name, 103)
+                return ReturnedInfo(p.name, b.name, 120)
             }
-        } else ReturnedInfo(null, null, 102)
+        } else ReturnedInfo(null, null, 110)
 
     }
-    return ReturnedInfo(null, null, 101)
+    return ReturnedInfo(null, null, 100)
 }
 
 
@@ -55,13 +55,12 @@ fun returnBorrowedBooks(bookNumber: String): ReturnedInfo {
             b.borrowable = true
             p.borrowedBookInfo.remove(b)
             L("${p.name} 님 ${b.name} 반납됨") // 지우기
-            return ReturnedInfo(p.name, b.name, 100)
-        } else return ReturnedInfo(null, null, 101)
-    } else return ReturnedInfo(null, null, 102)
+            return ReturnedInfo(p.name, b.name, 200)
+        } else return ReturnedInfo(null, null, 210)
+    } else return ReturnedInfo(null, null, 220)
 } // 완료됨
 
 fun printBorrowedBook():List<Person>?{
-//    var p = people.find { person -> person.borrowedBookInfo.size > 0 }
     var p = people.filter{it.borrowedBookInfo.size > 0}
     L("checkBorrowedBook()  :  " + p) // remove
     if(p.size > 0){

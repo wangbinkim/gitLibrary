@@ -17,8 +17,10 @@ data class ReturnedInfo(
     var bookName: String?,
     var code: Int
 )
-// 회원 이름, 책 이름, 코드
-// return code 100 반납완료 101 회원 없음 102 책 존재하지 않음 103 대출완료 104 대출중
+
+// ** code
+// borrow code 100 회원 없음 110 책 없음 120 대출완료 130 대출중
+// return code 200 반납 완료 210 회원 없음 220 책 없음
 
 
 
